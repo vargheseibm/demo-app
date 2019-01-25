@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: votingapp-deployment
+  labels:
+    name: votingapp-deployment
+    app: demo-app
+spec:
+  template:
+    metadata:
+      name: votingapp-pod
+      labels:
+        name: votingapp-pod
+        app: demo-app
+    spec:
+      containers:
+        - name: votingapp
+          image: dockersamples/examplevotingapp_vote
+          ports:
+            - containerPort: 80
+  replicas: 3
+  selector:
+    matchLabels:
+      name: votingapp-pod
+      app: demo-app
