@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
-    needs: ['rrun-windows-command']
+    needs: ['run-windows-command']
     steps:
       - name: echo a string
         run: echo "Welcome to GitHub Actions Learning"
