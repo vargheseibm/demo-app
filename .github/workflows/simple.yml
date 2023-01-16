@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
+    needs: ['rrun-windows-command']
     steps:
       - name: echo a string
         run: echo "Welcome to GitHub Actions Learning"
@@ -19,7 +20,6 @@ jobs:
         shell: python
   run-windows-command:
     runs-on: windows-latest
-    needs: ['run-shell-command']
     steps:
       - name: Directory Powersell
         run: Get-Location
