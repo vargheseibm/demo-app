@@ -12,7 +12,8 @@ jobs:
         run: |
           node -v
           npm -v
-      - name : dislay 
+      - name : python command 
         run: |
-          java -version
+          import platform
+          print(platform.processor())
 
