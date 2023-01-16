@@ -16,6 +16,8 @@ jobs:
           # git checkout 
       - name: Checkout Actions
         uses: actions/checkout@v3
+        with:
+          ref: 'ff5c1097db8510e0d20f0ee63e8201a53117fddc'
       - name: List files after Checkout
         run: |
           pwd
