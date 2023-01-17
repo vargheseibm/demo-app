@@ -9,15 +9,15 @@ on:
       - '!feature/dev' # ignore this feature branch
       - 'development'
 
-    tags:
-      - 'v1.*'
+    # tags:
+    #   - 'v1.*'
     # tags-ignore:
     #   - 'v2.*'
 
     # paths: 
     #   - '**.js'
-    paths-ignore:
-      - 'docs/**'
+    # paths-ignore:
+    #   - 'docs/**'
     # branches-ignore:
     #    - development
   # repository_dispatch:
