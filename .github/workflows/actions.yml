@@ -4,8 +4,11 @@ on:
   push:
     branches:
       - master
-      - 'feature/*'
-  
+      - 'feature/*'  # features/featurea , features/featureb
+      - 'feature/**' # matches features/feat/a
+      - '!feature/dev'
+    # branches-ignore:
+    #    - development
   # repository_dispatch:
   #   types: [Build]
     
