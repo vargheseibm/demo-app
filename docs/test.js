@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h2>JavaScript Statements</h2>
+<h2>JavaScript S</h2>
 
 <p>A <b>JavaScript program</b> is a list of <b>statements</b> to be executed by a computer.</p>
 
