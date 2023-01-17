@@ -6,7 +6,7 @@
 
 <p>A <b>JavaScript program</b> is a list of <b>statements</b> to be executed by a computer.</p>
 
-<p id="demo"></p>
+<p id="Demo"></p>
 
 <script>
 var x, y, z;  // Declare 3 variables

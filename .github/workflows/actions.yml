@@ -7,6 +7,7 @@ on:
       - 'feature/*'  # features/featurea , features/featureb
       - 'feature/**' # matches features/feat/a
       - '!feature/dev' # ignore this feature branch
+      - 'development'
 
     tags:
       - 'v1.*'
