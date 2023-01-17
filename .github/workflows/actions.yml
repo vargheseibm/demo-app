@@ -6,7 +6,15 @@ on:
       - master
       - 'feature/*'  # features/featurea , features/featureb
       - 'feature/**' # matches features/feat/a
-      - '!feature/dev'
+      - '!feature/dev' # ignore this feature branch
+
+    tags:
+      - 'v1.*'
+    # tags-ignore:
+    #   - 'v2.*'
+
+    paths: 
+      - '**.js'
     # branches-ignore:
     #    - development
   # repository_dispatch:
