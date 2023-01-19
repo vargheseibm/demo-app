@@ -21,5 +21,6 @@ jobs:
           args: -v
       - uses: actions/checkout@v1
       - name: Run a Script
-        run: | 
-          ./script.sh
+        run: |
+          chmod 777 ./script.sh
+          ./script.sh "hello"
