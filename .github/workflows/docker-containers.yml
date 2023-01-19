@@ -19,6 +19,10 @@ jobs:
         with:
           entrypoint: /usr/local/bin/node
           args: -v
+      - uses: actions/checkout@v1
+      - name: check repo 
+        run:
+          ls -a
       - name: Run a Script
         uses: docker://node:19.4-alpine3.17
         with:
