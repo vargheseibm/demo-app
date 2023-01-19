@@ -19,3 +19,8 @@ jobs:
         with:
           entrypoint: /usr/local/bin/node
           args: -v
+      - name: Run a Script
+        uses: docker://node:19.4-alpine3.17
+        with:
+          entrypoint: ./script.sh
+          args: "Some string"
