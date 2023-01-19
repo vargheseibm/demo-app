@@ -3,14 +3,23 @@ on: push
 
 jobs:
   node-version:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest,windows-latest]
+        node-version: [6,8,10]
+      #fail-fast: true  # the job will stop if job in metrix fails
+      #max-parallel: 0 # limits the number of parallel jobs
+        
+    #runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     steps:
       - name: Log node  version 
         run: node -v 
       - name: Node Version change
         uses: actions/setup-node@v1
         with:
-          node-version: 6
+          #node-version: 6
+          node-version: ${{ matrix.node-version }}
       
       - name: Log node version again 
         run: node -v 
