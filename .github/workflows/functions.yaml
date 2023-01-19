@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: push request
         run: 
-          eccho "This is a Push Request"      
+          echo "This is a Push Request"      
       - name: push request2
         if: failure() # runs even if the previous step was failure 
         run: 
