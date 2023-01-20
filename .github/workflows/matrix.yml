@@ -1,0 +1,38 @@
+name: Matrix
+on: pull_request
+
+jobs:
+  node-version:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest,windows-latest]
+        node-version: [6,8,10]
+        include:
+          - os: ubuntu-latest
+            node-version: 4
+            is_ubuntu_8: "true"
+        exclude:
+          - os: macos-latest
+            node-version: 8
+          - os: windows-latest
+            node-version: 10
+      #fail-fast: true  # the job will stop if job in metrix fails
+      #max-parallel: 0 # limits the number of parallel jobs
+        
+    #runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    env:
+      IS_UBUNTU_8: ${{matrix.is_ubuntu_8}}
+    steps:
+      - name: Log node  version 
+        run: node -v 
+      - name: Node Version change
+        uses: actions/setup-node@v1
+        with:
+          #node-version: 6
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Log node version again 
+        run: |
+          node -v 
+          echo ${IS_UBUNTU_8}

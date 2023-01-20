@@ -1,14 +1,17 @@
 name: "Shell Commands"
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     needs: ['run-windows-command']
+    timeout-minutes: 360 # maximum time the job can take
     steps:
       - name: echo a string
         run: echo "Welcome to GitHub Actions Learning"
+        continue-on-error: true # all subsequent steps runs even if this step fails
+        timeout-minutes: 60
       - name: multiline scripts
         run: |
           node -v

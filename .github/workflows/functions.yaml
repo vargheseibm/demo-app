@@ -1,0 +1,31 @@
+name: functions
+on: [pull_request]
+ 
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo ${{ contains('hello','ll') }}
+          echo ${{ startsWith('hello','he') }}
+          echo ${{endsWith('hello','lo') }}
+          echo ${{ format('Hello {0} {1} {2}','World','!','??') }}
+  status:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: push request
+        run: 
+          echo "This is a Push Request"      
+      - name: push request2
+        if: failure() # runs even if the previous step was failure 
+        run: 
+          echo "This is a Push Request which runs even if earlier step fails"   
+      - name: push request2
+        if: always() # runs always even if what happens in the workflow
+        run: 
+          echo "This is a Push Request with always run"    
+      - name: push request3
+        run: 
+          echo "This is a Push Request with no if statement"    
