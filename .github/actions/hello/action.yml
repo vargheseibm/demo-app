@@ -2,7 +2,7 @@ name: Hello World'
 author: Vargheese V
 description: Hello World actions 
 inputs:
-  who-go-greet: 
+  who-to-greet: 
     description: 'who to greet'
     required: true
     default: Vargheese
