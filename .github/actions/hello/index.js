@@ -3,7 +3,7 @@ const github = required("@actions/github");
 
 
 try {
-  const name = core.getInput("who-go-greet");
+  const name = core.getInput("who-to-greet");
   console.log(`Hello ${name}`);
 
   const time = new Date();
