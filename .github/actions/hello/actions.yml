@@ -1,0 +1,14 @@
+name: Hello World'
+author: Vargheese V
+description: Hello World actions 
+inputs:
+  who-go-greet: 
+    description: 'who to greet'
+    required: true
+    default: Vargheese
+outputs:
+  time: 
+     description: 'The greeting time'
+runs: 
+  using: 'node12'
+  main: 'index.js'
